@@ -8,7 +8,7 @@ const TaskCard = ({ tasks }) => {
 
     return (
         <div>
-            <Tasks tasks={tasks}>
+            <Tasks tasks={tasks} />
         </div>
     )
 }

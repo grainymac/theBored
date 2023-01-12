@@ -4,15 +4,17 @@
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  height: 100vh;
   }
   
 .logo-box { 
   grid-area: 1 / 1 / 4 / 3;
-  height: 50%;
+  justify-self: center;
 }
 
 .info-box { 
-  grid-area: 4 / 1 / 6 / 3; 
+  grid-area: 4 / 1 / 6 / 3;
+  height: 200px;
 }
 
 .task-box { 
@@ -23,9 +25,18 @@
 
 .button-box { 
   grid-area: 4 / 3 / 6 / 6; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 200px;
 }
 
 .bored-logo {
   height: 100%;
   margin: 20px;
+}
+
+.board-btn,
+.active-btn {
+  height: 75px;
 }

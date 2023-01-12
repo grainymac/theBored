@@ -40,7 +40,7 @@ const App = () => {
         <InfoCard />
       </div>
       <div className='task-box'>
-        <ActivityCard activities={activities.activity}  />
+        <ActivityCard activities={activities.activity} accessibility={activities.accessibility} type={activities.type} participants={activities.participants} price={activities.price} link={activities.link} key={activities.key} />
       </div>
       <div className='button-box'>
         <button onClick={() => getAllActivities()}>click it</button>

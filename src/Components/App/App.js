@@ -5,13 +5,13 @@ import boredLogo from '../../assets/theBored-blackRed.png'
 import './App.css';
 
 import InfoCard from '../InfoCard/InfoCard'
-import TaskCard from '../TaskCard/TaskCard'
+import ActivityCard from '../ActivityCard/ActivityCard'
 
 const App = () => {
-  const [tasks, setTasks] = useState({})
+  const [activities, setActivities] = useState({})
   const [e, setError] = useState('')
 
-  const getAllTasks = async () => {
+  const getAllActivities = async () => {
     const url = "http://www.boredapi.com/api/activity/";
     try {
       const response = await axios(url, {
@@ -20,7 +20,7 @@ const App = () => {
         },
       });
       console.log(response.data)
-      setTasks(response.data);
+      setActivities(response.data);
     } catch (e) {
       setError(e)
       console.log(e);
@@ -28,8 +28,7 @@ const App = () => {
 
   }
   useEffect(() => {
-    
-    getAllTasks()
+    getAllActivities()
   }, [])
 
   return (
@@ -41,11 +40,11 @@ const App = () => {
         <InfoCard />
       </div>
       <div className='task-box'>
-        <TaskCard tasks={tasks.activity} />
+        <ActivityCard activities={activities.activity} accessibility={activities.accessibility} type={activities.type} participants={activities.participants} price={activities.price} link={activities.link} key={activities.key} />
       </div>
       <div className='button-box'>
-        <button onClick={() => getAllTasks()}>click it</button>
-        <button onClick={() => getAllTasks()}>click it</button>
+        <button onClick={() => getAllActivities()}>click it</button>
+        <button onClick={() => getAllActivities()}>click it</button>
       </div>
     </main>
   );

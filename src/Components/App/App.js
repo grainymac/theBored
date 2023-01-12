@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 
 import Button from '@mui/material/Button';
@@ -8,6 +9,7 @@ import './App.css';
 import boredLogo from '../../assets/theBored-blackRed.png'
 import InfoCard from '../InfoCard/InfoCard'
 import ActivityCard from '../ActivityCard/ActivityCard'
+import Board from '../Board/Board'
 import theme from '../../theme'
 
 const App = () => {
@@ -61,6 +63,12 @@ const App = () => {
           </Button>
         </ThemeProvider>
       </div>
+      <Routes>
+          <Route path='/' />
+          <Route path="/board" element={(<Board activities={activities.activity} addActivity={addActivity} />)} />
+          <Route path="/welcome" element={(<Welcome />)} />
+          <Route path='/*' element={(<BadURL />)} />
+        </Routes>
     </main>
   );
 }

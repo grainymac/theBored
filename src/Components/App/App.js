@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 
-import boredLogo from '../../assets/theBored-blackRed.png'
-import './App.css';
+import Button from '@mui/material/Button';
+import { ThemeProvider } from '@mui/material/styles';
 
+import './App.css';
+import boredLogo from '../../assets/theBored-blackRed.png'
 import InfoCard from '../InfoCard/InfoCard'
 import ActivityCard from '../ActivityCard/ActivityCard'
+import theme from '../../theme'
 
 const App = () => {
   const [activities, setActivities] = useState({})
+  const [board, setBoard] = useState([])
   const [e, setError] = useState('')
 
   const getAllActivities = async () => {
@@ -31,6 +35,11 @@ const App = () => {
     getAllActivities()
   }, [])
 
+  const addActivity = (activities) => {
+    if (!board.some(item => item.key === activities.key))
+      setBoard([...board, activities]);
+  }
+
   return (
     <main className='main-container'>
       <div className='logo-box'>
@@ -43,8 +52,14 @@ const App = () => {
         <ActivityCard activities={activities.activity} accessibility={activities.accessibility} type={activities.type} participants={activities.participants} price={activities.price} link={activities.link} key={activities.key} />
       </div>
       <div className='button-box'>
-        <button onClick={() => getAllActivities()}>click it</button>
-        <button onClick={() => getAllActivities()}>click it</button>
+        <ThemeProvider theme={theme}>
+          <Button color={theme.primary} className='active-btn' disabled={false} size="large" variant="contained" onClick={() => {getAllActivities()}}>
+            new activity
+          </Button>
+          <Button color={theme.secondary} className='board-btn' disabled={false} size="large" variant="contained" onClick={() => addActivity(activities.activity)}>
+            add to the board
+          </Button>
+        </ThemeProvider>
       </div>
     </main>
   );

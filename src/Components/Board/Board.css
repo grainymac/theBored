@@ -1,0 +1,9 @@
+.board-container {
+    background-color: #5c4454;
+    border: 10px double #7ea228;
+}
+
+.board-title {
+    text-align: center;
+    color: white;
+}

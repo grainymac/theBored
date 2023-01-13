@@ -42,8 +42,6 @@ const App = () => {
   }, [])
 
   const addActivity = (activity) => {
-    console.log(activity, 'WHAT IS THIS')
-      setBoard([...board, activity.activity]);
   }
 
 

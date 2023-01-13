@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,13 +15,13 @@ const Header = () => {
             <AppBar position="static">
                 <Toolbar className='toolbar' disableGutters>
                     <Typography variant="h2" className='links' component="h2">
-                        home
+                        <NavLink to='/'>home</NavLink>
                     </Typography>
                     <Typography variant="h2" className='links' component="h2">
-                        welcome    
+                        <NavLink to='/welcome'>welcome</NavLink>    
                     </Typography>
                     <Typography variant="h2" className='links' component="h3">
-                        the board
+                        <NavLink to='/board'>the board</NavLink>
                     </Typography>
                 </Toolbar>
             </AppBar>

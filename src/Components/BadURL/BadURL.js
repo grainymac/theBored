@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../About/About.css'
+import './BadURL.css'
 import Button from '@mui/material/Button'
 
 

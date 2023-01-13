@@ -9,7 +9,8 @@ import './App.css';
 import boredLogo from '../../assets/theBored-blackRed.png'
 import InfoCard from '../InfoCard/InfoCard'
 import ActivityCard from '../ActivityCard/ActivityCard'
-import BadURL from ''
+import BadURL from '../BadURL/BadURL'
+import Welcome from '../Welcome/Welcome'
 import Board from '../Board/Board'
 import theme from '../../theme'
 

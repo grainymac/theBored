@@ -1,0 +1,26 @@
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    border: 5px ridge #9c3111;
+    border-radius: 15px;
+    padding: 10px 10px;
+    margin: 15px 15px;
+}
+
+.welcome-title {
+    text-align: center;
+    text-decoration: underline;
+    color: #5c4454;
+}
+
+.welcome-txt {
+    text-align: center;
+    color: #5c4454;
+    font-size: 20px;
+}
+
+.bored-logo {
+    height: 50vh;
+}

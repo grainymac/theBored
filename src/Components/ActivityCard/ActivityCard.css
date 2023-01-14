@@ -1,10 +1,9 @@
-.activity-card {
-    background-color: white;
+.box {
+    background-color: #BD7873;
     box-sizing: border-box;
-    border: 5px ridge #9c3111;
+    border: 5px ridge black;
     border-radius: 10px;
     padding: 10px;
     width: 50vw;
     height: 50vh;
-    margin: 40px;
 }

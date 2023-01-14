@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import './App.css';
-import boredLogo from '../../assets/theBored-blackRed.png'
+// import boredLogo from '../../assets/theBored-blackRed.png'
 import BadURL from '../BadURL/BadURL'
 import Welcome from '../Welcome/Welcome'
 import Board from '../Board/Board'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import theme from '../../theme'
+// import theme from '../../theme'
 import Home from '../Home/Home'
 
 const App = () => {
@@ -48,6 +48,7 @@ const App = () => {
   return (
     <div className='container'>
       <Header />
+      {e && e}
       <Routes>
         <Route exact path='/' element={(<Home activities={activities} getAllActivities={getAllActivities} addActivity={addActivity} /> )} />
         <Route path="/board" element={(<Board board={board} deleteActivity={deleteActivity} />)} />

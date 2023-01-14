@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Board.css'
-import { ThemeProvider } from '@mui/material/styles';
-import theme from '../../theme'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import theme from '../../theme'
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -11,18 +11,9 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
-const Board = ({ activity }) => {
-    const [board, setBoard] = useState([])
+const theme = createTheme()
 
-    const deleteActivity = (activity) => {
-        const deletion = board.filter(act => console.log(act, 'ACT'))
-        setBoard([...deletion])
-    }
-
-    const completeActivity = (event, activity) => {
-        const completion = activity.key === activity.key
-        setBoard([...completion])
-    }
+const Board = ({ board, deleteActivity }) => {
 
     return (
         <div className='board-container'>
@@ -33,6 +24,7 @@ const Board = ({ activity }) => {
                     <Container sx={{ py: 4, bgColor: 'red', px: 0, display: 'flex', flexDirection: 'column', paddingRight: 7, justifyContent: 'center'}} maxWidth="100%" >
                         { !board.length && <h2 className='no-activity'>there are no activities saved! go back to save some</h2> }
                         <Grid className="grid" container spacing={4}>
+                            {board.map((activity) => (
                             <Grid item key={activity.key} xs={12} sm={6} md={4}>
                                 <Stack direction="column" spacing={2} justifyContent="space-between" alignItems="center">
                                     <CardContent sx={(theme) => ({ bgcolor: '#7e2835', borderRadius: '15px', borderColor: 'black', borderStyle: 'hidden' })}>
@@ -52,16 +44,14 @@ const Board = ({ activity }) => {
                                             </Typography>
                                         </Card>
                                         <div className='btn-container'>
-                                            <Button variant="contained" color={theme.primary} onClick={() => deleteActivity(activity.activity)}>
+                                            <Button variant="contained" color='success' onClick={() => deleteActivity(activity)}>
                                                 delete
-                                            </Button>
-                                            <Button variant="contained" color={theme.primary} onClick={() => completeActivity(activity)}>
-                                                mark complete
                                             </Button>
                                         </div>
                                     </CardContent>
                                 </Stack>
                             </Grid>
+                            ))}
                         </Grid>
                     </Container>
                 </div>

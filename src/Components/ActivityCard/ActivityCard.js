@@ -6,7 +6,6 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import './ActivityCard.css'
 
-
 const ActivityCard = ({ activities, addActivity }) => {
     console.log(activities)
     return (

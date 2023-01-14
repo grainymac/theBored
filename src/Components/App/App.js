@@ -29,8 +29,8 @@ const App = () => {
       setError(e)
       console.log(e);
     }
-
   }
+
   useEffect(() => {
     getAllActivities()
   }, [])
@@ -40,9 +40,17 @@ const App = () => {
     setBoard([...board, activity])
   }
 
-  const deleteActivity = (event, activity) => {
-    const deletion = board.filter(item => item.key !== event.id)
+  const deleteActivity = (event) => {
+    console.log(event, 'EVENT')
+    const deletion = board.filter(item => item.key !== event.key)
     setBoard([...deletion])
+  }
+
+  const completeActivity = (event) => {
+    console.log(event, 'COMPLETION')
+    window.alert('Completed Activity')
+    const completion = board.filter(item => item.key !== event.key)
+    setBoard([...completion])
   }
 
   return (
@@ -51,7 +59,7 @@ const App = () => {
       {e && e}
       <Routes>
         <Route exact path='/' element={(<Home activities={activities} getAllActivities={getAllActivities} addActivity={addActivity} /> )} />
-        <Route path="/board" element={(<Board board={board} deleteActivity={deleteActivity} />)} />
+        <Route path="/board" element={(<Board board={board} deleteActivity={deleteActivity} completeActivity={completeActivity}/>)} />
         <Route path="/welcome" element={(<Welcome />)} />
         <Route path='/*' element={(<BadURL />)} />
       </Routes>

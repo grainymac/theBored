@@ -1,21 +1,28 @@
 .board-container {
-    background-color: #5c4454;
-    border: 10px double #7ea228;
+    background-color: #BD7873;
+    border: 10px ridge #1B5E20;
     border-radius: 20px;
     margin: 20px 20px;
+    height: 80vh;
+    width: 95vw;
 }
 
 .board-title {
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .btn-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    height: 10%;
 }
 
 .no-activity {
     text-align: center;
+}
+
+.delete-btn {
+    background-color: white;
 }

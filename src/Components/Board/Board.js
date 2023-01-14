@@ -13,7 +13,7 @@ import Container from '@mui/material/Container';
 
 const theme = createTheme()
 
-const Board = ({ board, deleteActivity }) => {
+const Board = ({ board, deleteActivity, completeActivity }) => {
 
     return (
         <div className='board-container'>
@@ -21,14 +21,14 @@ const Board = ({ board, deleteActivity }) => {
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <div>
-                    <Container sx={{ py: 4, bgColor: 'red', px: 0, display: 'flex', flexDirection: 'column', paddingRight: 7, justifyContent: 'center'}} maxWidth="100%" >
+                    <Container sx={{ py: 4, px: 0, display: 'flex', flexDirection: 'column', paddingRight: 7, justifyContent: 'center'}} maxWidth="100%" >
                         { !board.length && <h2 className='no-activity'>there are no activities saved! go back to save some</h2> }
                         <Grid className="grid" container spacing={4}>
                             {board.map((activity) => (
                             <Grid item key={activity.key} xs={12} sm={6} md={4}>
                                 <Stack direction="column" spacing={2} justifyContent="space-between" alignItems="center">
-                                    <CardContent sx={(theme) => ({ bgcolor: '#7e2835', borderRadius: '15px', borderColor: 'black', borderStyle: 'hidden' })}>
-                                        <Card sx={(theme) => ({ bgcolor: '#7ea228', borderRadius: '15px', borderStyle: 'hidden', justifySelf: 'center'})}>
+                                    <CardContent sx={(theme) => ({ bgcolor: '#922E31', borderRadius: '15px', borderColor: 'black', borderStyle: 'hidden' })}>
+                                        <Card sx={(theme) => ({ bgcolor: '#D09A95', borderRadius: '15px', borderStyle: 'hidden', justifySelf: 'center'})}>
                                             <Typography p='5%' gutterBottom color="black" sx={(theme) => ({
                                                 [theme.breakpoints.down('sm')]: {
                                                     fontSize: 'medium',
@@ -44,8 +44,11 @@ const Board = ({ board, deleteActivity }) => {
                                             </Typography>
                                         </Card>
                                         <div className='btn-container'>
-                                            <Button variant="contained" color='success' onClick={() => deleteActivity(activity)}>
+                                            <Button variant="contained" className='delete-btn' color='success' onClick={() => deleteActivity(activity)}>
                                                 delete
+                                            </Button>
+                                            <Button variant="contained" className='complete-btn' color='success' onClick={() => completeActivity(activity)}>
+                                                complete activity
                                             </Button>
                                         </div>
                                     </CardContent>

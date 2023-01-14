@@ -45,7 +45,6 @@ const App = () => {
     setBoard([...deletion])
   }
 
-
   return (
     <div className='container'>
       <Header />

@@ -17,7 +17,7 @@ const Home = ({ activities, getAllActivities, addActivity }) => {
                 margin={2}
                 width='100%'
                 >
-                <ActivityCard activities={activities} addActivity={addActivity}/>
+                <ActivityCard className='activity-card' activities={activities} addActivity={addActivity}/>
                 <Button className='new-activity-btn' variant='contained' onClick={() => getAllActivities()}>new activity</Button>
             </Stack>
         </div>

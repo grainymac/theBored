@@ -1,6 +1,6 @@
 import React from 'react'
 import './Welcome.css'
-import boredLogo from '../../assets/theBored-green.png'
+import boredLogoRed from '../../assets/theBored-green.png'
 
 const Welcome = () => {
     return (
@@ -16,7 +16,7 @@ const Welcome = () => {
                 <p>
                     I hope you enjoy using the application and that boredom no longer consumes your day. Get out there and try some things!
                 </p>
-                <img src={boredLogo} alt='bored logo' className='bored-logo'/>
+                <img src={boredLogoRed} alt='bored logo' className='bored-logo-red'/>
             </div>
         </div>
     )

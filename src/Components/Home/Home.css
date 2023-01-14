@@ -5,6 +5,12 @@
     align-items: center;
 }
 
+.activity-card {
+    height: 50vh;
+    width: 40vw;
+}
 .bored-logo {
-
+    height: 20%;
+    width: 20vw;
+    margin-left: 10%;
 }

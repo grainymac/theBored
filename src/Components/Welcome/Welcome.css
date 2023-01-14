@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: white;
+    background-color: #BD7873;
     border: 5px ridge #9c3111;
     border-radius: 15px;
     padding: 10px 10px;
@@ -12,13 +12,15 @@
 .welcome-title {
     text-align: center;
     text-decoration: underline;
-    color: #5c4454;
+    color: black;
 }
 
 .welcome-txt {
     text-align: center;
-    color: #5c4454;
+    color: #000000;
     font-size: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .bored-logo {

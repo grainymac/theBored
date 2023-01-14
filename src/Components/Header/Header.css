@@ -1,7 +1,12 @@
 .toolbar {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
     background-color: black;
     color: white;
+}
+
+.links {
+    color: #BD7873;
 }

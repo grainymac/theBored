@@ -3,6 +3,7 @@ import './ActivityCard.css'
 import { Stack } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 
 const ActivityCard = ({ activities, addActivity }) => {
@@ -46,6 +47,9 @@ const ActivityCard = ({ activities, addActivity }) => {
                         </Typography>
                     </div>
                 </Box>
+                <Button className='add-activity-btn' variant="contained" color="success" onClick={() => addActivity(activities)}>
+                        add to board
+                </Button>       
             </Stack>
         </div>
     )

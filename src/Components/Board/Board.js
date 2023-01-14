@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Board.css'
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '../../theme'
@@ -11,17 +11,61 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
-const Board = ({ activities }) => {
+const Board = ({ activity }) => {
+    const [board, setBoard] = useState([])
 
-    // const deleteActivity = (event, activity) => {
-    //     const deletion = board.filter(item => item.key !== event.key)
-    //     setBoard([...deletion])
-    //   }
+    const deleteActivity = (activity) => {
+        const deletion = board.filter(act => console.log(act, 'ACT'))
+        setBoard([...deletion])
+    }
+
+    const completeActivity = (event, activity) => {
+        const completion = activity.key === activity.key
+        setBoard([...completion])
+    }
 
     return (
         <div className='board-container'>
-            <h2 className='board-title'>the board</h2>
-            
+            <h2 className='board-title'>activity board</h2>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <div>
+                    <Container sx={{ py: 4, bgColor: 'red', px: 0, display: 'flex', flexDirection: 'column', paddingRight: 7, justifyContent: 'center'}} maxWidth="100%" >
+                        { !board.length && <h2 className='no-activity'>there are no activities saved! go back to save some</h2> }
+                        <Grid className="grid" container spacing={4}>
+                            <Grid item key={activity.key} xs={12} sm={6} md={4}>
+                                <Stack direction="column" spacing={2} justifyContent="space-between" alignItems="center">
+                                    <CardContent sx={(theme) => ({ bgcolor: '#7e2835', borderRadius: '15px', borderColor: 'black', borderStyle: 'hidden' })}>
+                                        <Card sx={(theme) => ({ bgcolor: '#7ea228', borderRadius: '15px', borderStyle: 'hidden', justifySelf: 'center'})}>
+                                            <Typography p='5%' gutterBottom color="black" sx={(theme) => ({
+                                                [theme.breakpoints.down('sm')]: {
+                                                    fontSize: 'medium',
+                                                    fontWeight: 'bold',
+                                                    marginTop: '4%'
+                                                },
+                                                [theme.breakpoints.down('md')]: {
+                                                    fontSize: 'medium',
+                                                    fontWeight: 'bold',
+                                                    marginTop: '2%'
+                                                }, })}>
+                                                    {activity.activity}
+                                            </Typography>
+                                        </Card>
+                                        <div className='btn-container'>
+                                            <Button variant="contained" color={theme.primary} onClick={() => deleteActivity(activity.activity)}>
+                                                delete
+                                            </Button>
+                                            <Button variant="contained" color={theme.primary} onClick={() => completeActivity(activity)}>
+                                                mark complete
+                                            </Button>
+                                        </div>
+                                    </CardContent>
+                                </Stack>
+                            </Grid>
+                        </Grid>
+                    </Container>
+                </div>
+            </ThemeProvider>
         </div>
     )
 }

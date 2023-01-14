@@ -41,44 +41,43 @@ const App = () => {
     getAllActivities()
   }, [])
 
-  const addActivity = (activities) => {
-    if (!board.some(item => item.key === activities.key))
-      setBoard([...board, activities]);
+  const addActivity = (activity) => {
   }
 
+
   return (
-    <div>
+    <div className='container'>
       <Header />
-        <Routes>
-          <Route exact path='/' element={
-      <main className='main-container'>
+      <Routes>
+        <Route exact path='/' element={
+          <main className='main-container'>
 
-              <div className='logo-box'>
-                <img src={boredLogo} className='bored-logo' />
-              </div>
-              <div className='info-box'>
-                <InfoCard />
-              </div>
-              <div className='task-box'>
-                <ActivityCard activities={activities.activity} accessibility={activities.accessibility} type={activities.type} participants={activities.participants} price={activities.price} link={activities.link} key={activities.key} />
-              </div>
-              <div className='button-box'>
-                <ThemeProvider theme={theme}>
-                  <Button color={theme.primary} className='active-btn' disabled={false} size="large" variant="contained" onClick={() => { getAllActivities() }}>
-                    new activity
-                  </Button>
-                  <Button color={theme.secondary} className='board-btn' disabled={false} size="large" variant="contained" onClick={() => addActivity(activities.activity)}>
-                    add to the board
-                  </Button>
-                </ThemeProvider>
-              </div>
-
+            <div className='logo-box'>
+              <img src={boredLogo} className='bored-logo' alt='the bored logo' />
+            </div>
+            <div className='info-box'>
+              <InfoCard />
+            </div>
+            <div className='task-box'>
+              <ActivityCard activities={activities.activity} accessibility={activities.accessibility} type={activities.type} participants={activities.participants} price={activities.price} link={activities.link} id={activities.key} />
+            </div>
+            {e && e}
+            <div className='button-box'>
+              <ThemeProvider theme={theme}>
+                <Button color={theme.primary} className='active-btn' disabled={false} size="large" variant="contained" onClick={() => { getAllActivities() }}>
+                  new activity
+                </Button>
+                <Button color={theme.secondary} className='board-btn' disabled={false} size="large" variant="contained" onClick={() => addActivity(activities)}>
+                  add to the board
+                </Button>
+              </ThemeProvider>
+            </div>
           </main>
-          } />
-          <Route path="/board" element={(<Board activities={activities.activity} addActivity={addActivity} />)} />
-          <Route path="/welcome" element={(<Welcome />)} />
-          <Route path='/*' element={(<BadURL />)} />
-        </Routes>
+        } />
+        <Route path="/board" element={(<Board activity={activities} />)} />
+        <Route path="/welcome" element={(<Welcome />)} />
+        <Route path='/*' element={(<BadURL />)} />
+      </Routes>
       <Footer />
     </div>
   );

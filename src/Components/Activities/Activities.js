@@ -1,7 +1,7 @@
 import React from 'react'
 import './Activities.css'
 
-const Activities = ({ activities, accessibility, type, participants, price, link, key }) => {
+const Activities = ({ activities, accessibility, type, participants, price, link, id }) => {
     return (
         <div className='text-container'>
             <p className='activity-text'>{activities}</p>

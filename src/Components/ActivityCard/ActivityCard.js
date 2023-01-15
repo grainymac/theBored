@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import './ActivityCard.css'
 
 const ActivityCard = ({ activities, addActivity }) => {
-    console.log(activities)
     return (
         <div className='activity-card-container'>
             <Stack direction="column" spacing={2} justifyContent="space-between" alignItems="center">
@@ -58,3 +57,7 @@ const ActivityCard = ({ activities, addActivity }) => {
 }
 
 export default ActivityCard
+ActivityCard.propTypes = {
+    activities: PropTypes.object,
+    addActivity: PropTypes.func
+}

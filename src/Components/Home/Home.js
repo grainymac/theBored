@@ -5,7 +5,8 @@ import ActivityCard from '../ActivityCard/ActivityCard';
 import boredLogo from '../../assets/theBored-blackRed.png'
 import './Home.css'
 import PropTypes from 'prop-types';
-
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../../theme'
 
 const Home = ({ activities, getAllActivities, addActivity }) => {
     return (
@@ -20,7 +21,9 @@ const Home = ({ activities, getAllActivities, addActivity }) => {
                 width='100%'
                 >
                 <ActivityCard className='activity-card' activities={activities} addActivity={addActivity}/>
-                <Button className='new-activity-btn' variant='contained' onClick={() => getAllActivities()}>new activity</Button>
+                <ThemeProvider theme={theme}>
+                    <Button className='new-activity-btn' variant='outlined' onClick={() => getAllActivities()}>new activity</Button>
+                </ThemeProvider>
             </Stack>
         </div>
     )

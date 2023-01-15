@@ -2,12 +2,12 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
     status: {
-        danger: '#e53e3e',
+        danger: '#bd7873',
     },
     palette: {
         primary: {
-            main: '#115363',
-            darker: '#053e85',
+            main: '#bd7873',
+            darker: '#bd7873',
         },
         secondary: {
             main: '#9c3111',

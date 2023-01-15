@@ -1,7 +1,6 @@
 import React from 'react'
 import './Board.css'
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import theme from '../../theme'
+import { ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -10,8 +9,8 @@ import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-
-const theme = createTheme()
+import PropTypes from 'prop-types';
+import theme from '../../theme'
 
 const Board = ({ board, deleteActivity, completeActivity }) => {
 
@@ -44,12 +43,14 @@ const Board = ({ board, deleteActivity, completeActivity }) => {
                                             </Typography>
                                         </Card>
                                         <div className='btn-container'>
-                                            <Button variant="contained" className='delete-btn' color='success' onClick={() => deleteActivity(activity)}>
-                                                delete
-                                            </Button>
-                                            <Button variant="contained" className='complete-btn' color='success' onClick={() => completeActivity(activity)}>
-                                                complete activity
-                                            </Button>
+                                            <ThemeProvider theme={theme}>
+                                                <Button variant="outlined" className='delete-btn' color={theme.main} onClick={() => deleteActivity(activity)}>
+                                                    delete
+                                                </Button>
+                                                <Button variant="outlined" className='complete-btn' color={theme.main} onClick={() => completeActivity(activity)}>
+                                                    complete activity
+                                                </Button>
+                                            </ThemeProvider>
                                         </div>
                                     </CardContent>
                                 </Stack>

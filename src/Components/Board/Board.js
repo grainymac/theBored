@@ -64,3 +64,8 @@ const Board = ({ board, deleteActivity, completeActivity }) => {
 }
 
 export default Board
+Board.propTypes = {
+    board: PropTypes.array,
+    deleteActivity: PropTypes.func,
+    completeActivity: PropTypes.func
+}

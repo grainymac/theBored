@@ -8,7 +8,6 @@ import Welcome from '../Welcome/Welcome'
 import Board from '../Board/Board'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-// import theme from '../../theme'
 import Home from '../Home/Home'
 
 const App = () => {

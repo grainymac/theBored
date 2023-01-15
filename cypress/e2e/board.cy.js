@@ -1,7 +1,6 @@
 describe('visiting the board', () => {
     beforeEach(() => {
-        cy.intercept('', {
-
+        cy.intercept('http://www.boredapi.com/api/activity/', {
         })
     })
 

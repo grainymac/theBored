@@ -7,9 +7,9 @@ import Button from '@mui/material/Button'
 const BadURL = () => {
     return (
         <div className='badURL-container'>
-                <h2 className='badURL-text'>You're on the wrong page dodo!<p>Click below to go back home</p></h2>
+                <h2 className='badURL-text'>You're on the wrong page<p>Click below to go back home</p></h2>
                 <Link to='/'>
-                    <Button variant="contained">
+                    <Button variant="contained" className='home-btn'>
                         Home
                     </Button>
                 </Link>

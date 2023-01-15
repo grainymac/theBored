@@ -1,7 +1,17 @@
 .badURL-container {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    width: 50%;
 }
 
 .badURL-text {
-    
+    text-align: center;
+}
+
+.home-btn {
+
 }

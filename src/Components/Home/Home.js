@@ -4,6 +4,8 @@ import { Stack } from '@mui/material';
 import ActivityCard from '../ActivityCard/ActivityCard';
 import boredLogo from '../../assets/theBored-blackRed.png'
 import './Home.css'
+import PropTypes from 'prop-types';
+
 
 const Home = ({ activities, getAllActivities, addActivity }) => {
     return (
@@ -25,3 +27,8 @@ const Home = ({ activities, getAllActivities, addActivity }) => {
 }
 
 export default Home
+Home.propTypes = {
+    activities: PropTypes.object,
+    getAllActivities: PropTypes.func,
+    addActivity: PropTypes.func
+}

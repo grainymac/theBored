@@ -8,11 +8,11 @@ describe('visiting the error page', () => {
     })
     
     it('user should see a message on the page prompting them that they are on the wrong page', () => {
-        
+        cy.get('.badURL-text').should('exist')
     })
 
     it('user should be able to click a button to go back to the home page', () => {
-        cy.get('').click()
+        cy.get('.MuiButtonBase-root').click()
         cy.url().should('equal', 'http://localhost:3000/')
     })
 })

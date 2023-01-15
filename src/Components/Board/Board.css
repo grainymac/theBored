@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Righteous&display=swap');
+
 .board-container {
     background-color: #BD7873;
-    border: 10px ridge #1B5E20;
+    border: 10px ridge #ffffff;
     border-radius: 20px;
     margin: 20px 20px;
     height: 80vh;
     width: 95vw;
+    box-shadow: -5px 10px 5px 5px #0000008f;
+    contain: content;
+    overflow: scroll;
 }
 
 .board-title {
+    font-family: 'Comfortaa', cursive;
     text-align: center;
     color: black;
+
 }
 
 .btn-container {

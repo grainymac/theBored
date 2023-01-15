@@ -16,7 +16,7 @@ const Board = ({ board, deleteActivity, completeActivity }) => {
 
     return (
         <div className='board-container'>
-            <h2 className='board-title'>activity board</h2>
+            <h1 className='board-title'>activity board</h1>
             <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <div>
@@ -24,10 +24,10 @@ const Board = ({ board, deleteActivity, completeActivity }) => {
                         { !board.length && <h2 className='no-activity'>there are no activities saved! go back to save some</h2> }
                         <Grid className="grid" container spacing={4}>
                             {board.map((activity) => (
-                            <Grid item key={activity.key} xs={12} sm={6} md={4}>
+                            <Grid item key={activity.key} xs={12} sm={6} md={3}>
                                 <Stack direction="column" spacing={2} justifyContent="space-between" alignItems="center">
-                                    <CardContent sx={(theme) => ({ bgcolor: '#922E31', borderRadius: '15px', borderColor: 'black', borderStyle: 'hidden' })}>
-                                        <Card sx={(theme) => ({ bgcolor: '#D09A95', borderRadius: '15px', borderStyle: 'hidden', justifySelf: 'center'})}>
+                                    <CardContent sx={(theme) => ({ bgcolor: '#922E31', borderRadius: '15px', borderColor: 'black', borderStyle: 'hidden', contain: 'content' })}>
+                                        <Card sx={(theme) => ({ bgcolor: '#D09A95', borderRadius: '15px', borderStyle: 'hidden',contain: 'content', justifySelf: 'center'})}>
                                             <Typography p='5%' gutterBottom color="black" sx={(theme) => ({
                                                 [theme.breakpoints.down('sm')]: {
                                                     fontSize: 'medium',
@@ -44,11 +44,11 @@ const Board = ({ board, deleteActivity, completeActivity }) => {
                                         </Card>
                                         <div className='btn-container'>
                                             <ThemeProvider theme={theme}>
-                                                <Button variant="outlined" className='delete-btn' color={theme.main} onClick={() => deleteActivity(activity)}>
-                                                    delete
+                                                <Button variant="text" className='delete-btn' color={theme.main} onClick={() => deleteActivity(activity)}>
+                                                    🗑️
                                                 </Button>
-                                                <Button variant="outlined" className='complete-btn' color={theme.main} onClick={() => completeActivity(activity)}>
-                                                    complete activity
+                                                <Button variant="text" className='complete-btn' color={theme.main} onClick={() => completeActivity(activity)}>
+                                                    ✅
                                                 </Button>
                                             </ThemeProvider>
                                         </div>

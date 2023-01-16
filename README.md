@@ -21,8 +21,8 @@ theBored is an activity generator application built utilizing React, Router, and
 - [![Adobe Illustrator](https://img.shields.io/badge/adobe_illustrator-FF9A00.svg?style=for-the-badge&logo=adobe-illustrator&logoColor=black)](https://www.adobe.com/products/illustrator.html)
 
 ## Illustrations
-![theBored_AdobeExpress](https://user-images.githubusercontent.com/106535343/212758111-09a00187-27c9-4dfb-a186-9383e77f7397.gif)
 
+!<img src="https://user-images.githubusercontent.com/106535343/212758111-09a00187-27c9-4dfb-a186-9383e77f7397.gif" width="400" height"300">
 
 ## Features
 - App was built up using MUI components inside a React application frame

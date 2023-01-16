@@ -9,30 +9,34 @@ import Board from '../Board/Board'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Home from '../Home/Home'
+import getAllActivities from '../../apiCalls'
 
 const App = () => {
   const [activities, setActivities] = useState({})
   const [board, setBoard] = useState([])
   const [e, setError] = useState('')
 
-  const getAllActivities = async () => {
-    const url = "http://www.boredapi.com/api/activity/";
-    try {
-      const response = await axios(url, {
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      setActivities(response.data);
-    } catch (e) {
-      setError(e)
-      console.log(e);
-    }
-  }
+  // const getAllActivities = async () => {
+  //   const url = "http://www.boredapi.com/api/activity/";
+  //   try {
+  //     const response = await axios(url, {
+  //       headers: {
+  //         Accept: "application/json",
+  //       },
+  //     });
+  //     setActivities(response.data);
+  //   } catch (e) {
+  //     setError(e)
+  //     console.log(e);
+  //   }
+  // }
 
   useEffect(() => {
     getAllActivities()
+      .then(data => setActivities(data))
+      .catch(e => setError(e))
   }, [])
+
 
   const addActivity = (activity) => {
     if (!board.some(item => item.key === activity.key))

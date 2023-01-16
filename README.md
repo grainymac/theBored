@@ -12,49 +12,47 @@ theBored is an activity generator application built utilizing React, Router, and
 
 ## Technologies
 - [![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)](https://www.javascript.com/)
-
-- [![React](https://user-images.githubusercontent.com/106535343/212756986-2637fede-60d8-49d2-8be8-775f1588d844.svg)](https://www.react.js.com)
-
+  - [![React](https://img.shields.io/badge/react-%23323330.svg?style=for-the-badge&logo=react&logoColor=%23F7DF1E)](https://reactjs.org/)
+  - [![Router](https://img.shields.io/badge/router-%23323330.svg?style=for-the-badge&logo=react-router&logoColor=%CA4245)](https://reactrouter.com/en/main)
+- [![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)](https://www.css3.info/)
+- [![Cyrpess](https://img.shields.io/badge/cypress-%1004E9F.svg?style=for-the-badge&logo=cypress&logoColor=%23F7DF1E)](https://www.cypress.io/)
+- [![MUI](https://img.shields.io/badge/mui-007FFF.svg?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)
+- [![Adobe Illustrator](https://img.shields.io/badge/adobe_illustrator-FF9A00.svg?style=for-the-badge&logo=adobe-illustrator&logoColor=black)](https://www.adobe.com/products/illustrator.html)
 
 ## Illustrations
-![9DAE3759-A0DE-4702-AB91-1A369C327423_1_102_o](https://user-images.githubusercontent.com/105405396/211422164-c234c353-6f9d-4912-a269-54a8875753a9.jpeg)
+![theBored_AdobeExpress](https://user-images.githubusercontent.com/106535343/212758111-09a00187-27c9-4dfb-a186-9383e77f7397.gif)
+
 
 ## Features
 - App was built up using MUI components inside a React application frame
-- A user can visit the page to see a random Dad Joke
-- New jokes can be called with a button click
-- Jokes can be saved to and deleted from their 'Pocket' page
-- App background and developer info can be found on the About page
-- Page breaks allow for consistency across multiple devices
-- Fun GSAP animations
-- A11y practices implemented for site content and navigation
-- Deployed and accessible anywhere via surge.sh
+- A user can visit the page to see a random activity
+- New activities can be called with a button click
+- Activities can be saved to and deleted from the Board
+- App background on the Welcome page
+- Deployed and accessible anywhere via vercel
 
 ## Possible Future Extensions
-- Local Storage
 - User Logins
-- Joke Ratings
-- Joke Comments
+- User can add/post activities
+- GSAP animations
+- Progress monitor on activities
 
 #### Milestones
-- After getting the hang of MUI and how easy it is to build consistent components we all feel that this is a tech that will be utilized moving forward on our projects.
-- Our collaboration was solid. We were all able to help explain and understand what the others had been researching and building so that we could replicate each others work if we needed to do so. 
-- We each feel that we were able to get a very solid cursory understanding of our new technologies (MUI and GSAP), make growth in our core technologies (JS, React, Router, HTML and CSS) and gain a more thorough understanding of how to best utilize Cypress testing.
+- After recently learned MUI, was able to implement it with my solo project with much more understanding.
+
 
 #### Challenges 
-- MUI and GSAP do not play well together. We found this is because of how MUI builds the components by making multiple children. Proper attention to selection was a big step in resolving these issues.
-- We had very odd issues with our deployment on Surge. Apple devices would not render in our backgrounds which was also apparently due to where we originally placed them.
-- GSAP has a very steep learning curve. This project was not really enough time to dig more into much more than simple uses for now.
-- Construction with MUI was also challenging, but once we realized how MUI was rendering everything. Using the React dev tools extension was a huge stepping stone to understanding and applying MUI components properly.
+- MUI styling isn't as straight forward with all of its components.
+- Using the theme plug-in with MUI to style everything
+- Initially was using axios in handling my apicall but it was forcing the url request with an http.  Was rendering the deployed page as blank.
 
-## Set Up
-
-### Deployed at [dokes.surge.sh](https://dokes.surge.sh/)
+### Deployed at [the-bored.vercel.app](https://the-bored.vercel.app/)
 
 ### Local Installation
 1. Clone the repo
    ```sh
-   git@github.com:thomedpete/Dokes.git
+   git@github.com:grainymac/theBored.git
    ```
 2. Enter the directory and install NPM packages
    ```sh
@@ -65,15 +63,11 @@ theBored is an activity generator application built utilizing React, Router, and
 4. Explore the website
 
 ## Sources
-  - [Dad Joke Generator](https://dadjokegenerator.com/)
-  - [Every Last Drop](http://everylastdrop.co.uk/)
-  - [Canva](https://www.canva.com/)
+  - [Bored API](http://www.boredapi.com/)
 
 ## Contributors
   - [Ian McIntosh](https://github.com/grainymac)
-  - [Thomas Peterson](https://github.com/thomedpete)
-  - [Matt Walter](https://github.com/MattWalterTX)
 
 ## Project Specs
-  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/stretch.html)
+  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/module-3/showcase.html)
 

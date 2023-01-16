@@ -22,7 +22,10 @@ theBored is an activity generator application built utilizing React, Router, and
 
 ## Illustrations
 
-<img src="https://user-images.githubusercontent.com/106535343/212758111-09a00187-27c9-4dfb-a186-9383e77f7397.gif" width="400" height"300" />
+<img src="https://user-images.githubusercontent.com/106535343/212758111-09a00187-27c9-4dfb-a186-9383e77f7397.gif" />
+
+https://user-images.githubusercontent.com/106535343/212761427-943ba957-9a9c-42db-938c-9989c972ddb1.mov
+
 
 ## Features
 - App was built up using MUI components inside a React application frame

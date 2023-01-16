@@ -23,7 +23,6 @@ const App = () => {
           Accept: "application/json",
         },
       });
-      console.log('WHAT IS THIS SHIT', response.data)
       setActivities(response.data);
     } catch (e) {
       setError(e)

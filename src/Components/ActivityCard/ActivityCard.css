@@ -10,17 +10,20 @@
     height: 60vh;
     contain: content;
     box-shadow: -5px 10px 5px 5px #0000008f;
+    word-wrap: break-word;
 }
 
 .card-text {
     color: black;
     font-family: 'Comfortaa', cursive;
+    word-wrap: break-word;
 }
 
 .card-text h2 {
     font-family: 'Righteous', cursive;
     font-weight: 900;
-    font-size: 50px;
+    font-size: 30px;
+    word-wrap: break-word;
 }
 
 .add-activity-button {

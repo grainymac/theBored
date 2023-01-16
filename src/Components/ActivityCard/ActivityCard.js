@@ -50,7 +50,6 @@ const ActivityCard = ({ activities, addActivity }) => {
                         })}>
                             <h2>{activities.activity}</h2>
                             <p>The is a {activities.type} type of activity. </p>
-                            <p>{activities.link}</p>
                         </Typography>
                     </div>
                 </Box>

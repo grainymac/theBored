@@ -31,12 +31,15 @@ const App = () => {
   //   }
   // }
 
-  useEffect(() => {
+  const allActivities = () => {
     getAllActivities()
       .then(data => setActivities(data))
       .catch(e => setError(e))
+  }
+  
+  useEffect(() => {
+    allActivities()
   }, [])
-
 
   const addActivity = (activity) => {
     if (!board.some(item => item.key === activity.key))
@@ -59,7 +62,7 @@ const App = () => {
       <Header />
       {e && e}
       <Routes>
-        <Route exact path='/' element={(<Home activities={activities} getAllActivities={getAllActivities} addActivity={addActivity} /> )} />
+        <Route exact path='/' element={(<Home activities={activities} getAllActivities={allActivities} addActivity={addActivity} /> )} />
         <Route path="/board" element={(<Board board={board} deleteActivity={deleteActivity} completeActivity={completeActivity}/>)} />
         <Route path="/welcome" element={(<Welcome />)} />
         <Route path='/*' element={(<BadURL />)} />

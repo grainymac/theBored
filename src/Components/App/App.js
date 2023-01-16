@@ -41,13 +41,11 @@ const App = () => {
   }
 
   const deleteActivity = (event) => {
-    console.log(event, 'EVENT')
     const deletion = board.filter(item => item.key !== event.key)
     setBoard([...deletion])
   }
 
   const completeActivity = (event) => {
-    console.log(event, 'COMPLETION')
     window.alert('Completed Activity')
     const completion = board.filter(item => item.key !== event.key)
     setBoard([...completion])

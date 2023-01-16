@@ -21,6 +21,13 @@ describe('visiting the board', () => {
         cy.get('.MuiPaper-root > .MuiTypography-root').contains('Learn how to play a new sport')
     })
 
+    it('user cannot save an activity more than once', () => {
+        cy.visit('http://localhost:3000').get('.css-15g5sgd-MuiStack-root > .MuiButtonBase-root').click()
+        cy.get(':nth-child(3) > .links').click()
+        cy.get(':nth-child(3) > .links').click()
+        cy.get('.MuiPaper-root > .MuiTypography-root').contains('Learn how to play a new sport')
+    })
+
     it('user should be able to delete an activity', () => {
         cy.visit('http://localhost:3000').get('.css-15g5sgd-MuiStack-root > .MuiButtonBase-root').click()
         cy.get(':nth-child(3) > .links').click()

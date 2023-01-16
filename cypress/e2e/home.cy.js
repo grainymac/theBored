@@ -8,7 +8,7 @@ describe('onLoad', () => {
     })
 
     it('user should see a random activity on page load', () => {
-        cy.intercept('http://www.boredapi.com/api/activity/', {
+        cy.intercept('https://www.boredapi.com/api/activity/', {
                 activity: "Learn Express.js",
                 accessibility: 0.25,
                 type: "education",
@@ -30,7 +30,7 @@ describe('onLoad', () => {
 
     it('user should be able to click the home link to go to the home page', () => {
         cy.get('.MuiToolbar-root > :nth-child(1) > .links').click()
-        cy.intercept('http://www.boredapi.com/api/activity/', {
+        cy.intercept('https://www.boredapi.com/api/activity/', {
             activity: "Learn Express.js",
             accessibility: 0.25,
             type: "education",
@@ -49,7 +49,7 @@ describe('onLoad', () => {
     })
 
     it('user should be able to click new activity button and get a new activity', () => {
-        cy.get('.MuiButton-outlined').click().intercept('http://www.boredapi.com/api/activity/',         {
+        cy.get('.MuiButton-outlined').click().intercept('https://www.boredapi.com/api/activity/',         {
             activity: "Learn a new programming language",
             accessibility: 0.25,
             type: "education",

@@ -1,6 +1,6 @@
 describe('visiting the welcome page', () => {
     beforeEach(() => {
-        cy.intercept('http://www.boredapi.com/api/activity/', {
+        cy.intercept('https://www.boredapi.com/api/activity/', {
             method: 'GET',
             fixture: '../fixtures/activities.json'
         })

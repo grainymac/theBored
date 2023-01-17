@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import axios from 'axios'
 import './App.css';
-// import boredLogo from '../../assets/theBored-blackRed.png'
 import BadURL from '../BadURL/BadURL'
 import Welcome from '../Welcome/Welcome'
 import Board from '../Board/Board'
@@ -15,21 +13,6 @@ const App = () => {
   const [activities, setActivities] = useState({})
   const [board, setBoard] = useState([])
   const [e, setError] = useState('')
-
-  // const getAllActivities = async () => {
-  //   const url = "http://www.boredapi.com/api/activity/";
-  //   try {
-  //     const response = await axios(url, {
-  //       headers: {
-  //         Accept: "application/json",
-  //       },
-  //     });
-  //     setActivities(response.data);
-  //   } catch (e) {
-  //     setError(e)
-  //     console.log(e);
-  //   }
-  // }
 
   const allActivities = () => {
     getAllActivities()
@@ -52,7 +35,7 @@ const App = () => {
   }
 
   const completeActivity = (event) => {
-    window.alert('Completed Activity')
+    window.alert('Completed Activity!')
     const completion = board.filter(item => item.key !== event.key)
     setBoard([...completion])
   }

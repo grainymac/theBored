@@ -19,7 +19,7 @@ const Home = ({ activities, getAllActivities, addActivity }) => {
                 alignItems="center"
                 margin={2}
                 width='100%'
-                >
+            >
                 <ActivityCard className='activity-card' activities={activities} addActivity={addActivity}/>
                 <ThemeProvider theme={theme}>
                     <Button className='new-activity-btn' variant='outlined' onClick={() => getAllActivities()}>new activity</Button>
